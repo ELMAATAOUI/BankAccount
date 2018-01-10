@@ -16,14 +16,24 @@ public class demo {
 
 		System.out.println(account.toString());
 
-		account.withdraw(1000.0);
+		if (account.withdraw(-10.0))
+			System.out.println(account.toString());
+		else {
+			System.out
+					.println("Vous n'avez pas le droit de procerder à cette opération ...!");
+			System.out.println(account.toString());
 
-		System.out.println(account.toString());
+		}
 
+		
+		
+		/*
+		 
 		account.deposit(5.0);
 
 		System.out.println(account.toString());
-
+		
+		 */
 	}
 
 }

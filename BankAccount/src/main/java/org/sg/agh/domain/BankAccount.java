@@ -34,18 +34,25 @@ public class BankAccount {
 	}
 
 	// methods to deposit and withdraw money
-	public synchronized void deposit(double amountIn) {
-		balance = balance + amountIn;
+	public synchronized boolean deposit(double amountIn) {
+		if ( amountIn < 0) {
+			return false;
+		} else {
+			balance = balance + amountIn;
+		
+			return true;
+		}
 	}
 
 	public synchronized boolean withdraw(double amountIn) {
-		if (amountIn > balance) {
+		if (amountIn > balance || amountIn < 0) {
 			return false;
 		} else {
 			balance = balance - amountIn;
 			return true;
 		}
 	}
+	
 
 	@Override
 	public int hashCode() {
