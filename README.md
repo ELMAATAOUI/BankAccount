@@ -1,5 +1,5 @@
 # BankAccount
-Un simple excemple de gestion de compte bancaire.
+Un simple excemple de gestion de compte bancaire en Java
 
 # Amélioration à venir :
 - Gestion des threads 
