@@ -2,10 +2,9 @@ package org.sg.agh.domain;
 
 /**
  * @author elm
- *
+ * 
  */
 public class BankAccount {
-
 
 	// the attributes
 	private String accountNumber;
@@ -15,47 +14,37 @@ public class BankAccount {
 	// the methods
 
 	// the constructor
-	public BankAccount(String numberIn, String nameIn)
-	{
-	accountNumber = numberIn;
-	accountName = nameIn;
-	balance = 0;
+	public BankAccount(String numberIn, String nameIn, Double balanceIn) {
+		accountNumber = numberIn;
+		accountName = nameIn;
+		balance = balanceIn;
 	}
 
 	// methods to read the attributes
-	public String getAccountName()
-	{
-	return accountName;
+	public String getAccountName() {
+		return accountName;
 	}
 
-	public String getAccountNumber()
-	{
-	return accountNumber;
+	public String getAccountNumber() {
+		return accountNumber;
 	}
 
-	public synchronized double getBalance()
-	{
-	return balance;
+	public synchronized double getBalance() {
+		return balance;
 	}
 
 	// methods to deposit and withdraw money
-	public synchronized void deposit(double amountIn)
-	{
-	balance = balance + amountIn;
+	public synchronized void deposit(double amountIn) {
+		balance = balance + amountIn;
 	}
-	
-	
-	public synchronized boolean withdraw(double amountIn)
-	{
-	if(amountIn > balance)
-	{
-	return false;
-	}
-	else
-	{
-	balance = balance - amountIn;
-	return true;
-	}
+
+	public synchronized boolean withdraw(double amountIn) {
+		if (amountIn > balance) {
+			return false;
+		} else {
+			balance = balance - amountIn;
+			return true;
+		}
 	}
 
 	@Override
@@ -99,11 +88,9 @@ public class BankAccount {
 
 	@Override
 	public String toString() {
-		return "BankAccount [accountNumber=" + getAccountNumber() + ", accountName="
-				+ getAccountName() + ", balance=" + balance + ", getBalance()="
-				+ getBalance() + "]";
+		return "BankAccount [accountNumber=" + getAccountNumber()
+				+ ", accountName=" + getAccountName() + ", balance=" + balance
+				+ "]";
 	}
-	
-	
 
 }
