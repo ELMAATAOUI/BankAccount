@@ -16,7 +16,7 @@ public class demo {
 
 		System.out.println(account.toString());
 
-		if (account.withdraw(-10.0))
+		if (account.withdraw(10.0))
 			System.out.println(account.toString());
 		else {
 			System.out
@@ -25,8 +25,7 @@ public class demo {
 
 		}
 
-		
-		
+				
 		/*
 		 
 		account.deposit(5.0);
